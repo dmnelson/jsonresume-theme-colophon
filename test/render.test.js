@@ -41,6 +41,16 @@ test("exports a render function and returns a complete HTML document", () => {
   assert.doesNotMatch(html, />Advanced</);
 });
 
+test("published entrypoint has inlined styles and no runtime filesystem dependency", () => {
+  const source = fs.readFileSync(path.join(__dirname, "..", "dist", "index.js"), "utf8");
+
+  assert.match(source, /const styles = "/);
+  assert.doesNotMatch(source, /require\("node:fs"\)/);
+  assert.doesNotMatch(source, /require\("node:path"\)/);
+  assert.doesNotMatch(source, /readFileSync/);
+  assert.doesNotMatch(source, /__dirname/);
+});
+
 test("does not crash when optional sections and fields are missing", () => {
   assert.doesNotThrow(() => theme.render());
   assert.doesNotThrow(() =>

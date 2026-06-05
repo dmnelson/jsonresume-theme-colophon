@@ -2,8 +2,9 @@
   "name": "jsonresume-theme-colophon",
   "version": "0.1.0",
   "description": "A warm, text-first JSON Resume theme for self-contained HTML resumes and polished PDFs.",
-  "main": "index.js",
-  "exports": "./index.js",
+  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "index.d.ts",
   "author": {
     "name": "David Nelson",
     "url": "https://github.com/dmnelson"
@@ -17,14 +18,25 @@
     "url": "https://github.com/dmnelson/jsonresume-theme-colophon/issues"
   },
   "files": [
+    "dist/index.js",
+    "CHANGELOG.md",
     "index.js",
+    "index.d.ts",
     "style.css",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
+    "build": "node scripts/build.js",
+    "prebuild:example": "npm run build",
     "build:example": "node scripts/build-example.js",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test",
+    "pretest": "npm run build",
     "test": "node --test"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "jsonresume",
