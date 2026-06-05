@@ -1,0 +1,5 @@
+node_modules/
+.npm-cache/
+example/resume.html
+example/resume.pdf
+.DS_Store

@@ -1,0 +1,152 @@
+# jsonresume-theme-colophon
+
+A warm, text-first JSON Resume theme for self-contained HTML resumes and polished PDFs.
+
+Colophon is built for resumes that read like considered documents rather than
+dashboards, templates, or landing pages. It pairs a large serif name with quiet
+monospace section labels, muted metadata, clay-colored links, and a
+single-column rhythm that stays readable on screen and in print.
+
+The renderer is plain CommonJS, has no runtime dependencies, and returns a
+complete, self-contained HTML document. It does not use client-side rendering
+or external fonts.
+
+## Screenshot
+
+![Colophon example resume](https://raw.githubusercontent.com/dmnelson/jsonresume-theme-colophon/main/docs/screenshot.png)
+
+## Install
+
+Once published:
+
+```sh
+npm install resumed jsonresume-theme-colophon
+```
+
+For local development:
+
+```sh
+git clone https://github.com/dmnelson/jsonresume-theme-colophon.git
+cd jsonresume-theme-colophon
+npm install
+npm test
+npm run build:example
+```
+
+The generated example is written to `example/resume.html`. It is ignored by
+Git so local render checks do not create repository noise.
+
+## Use with resumed
+
+Render with the published package:
+
+```sh
+npx resumed render resume.json \
+  --theme jsonresume-theme-colophon \
+  --output resume.html
+```
+
+Render directly from a local checkout:
+
+```sh
+npm install resumed ./path/to/jsonresume-theme-colophon
+npx resumed render resume.json \
+  --theme jsonresume-theme-colophon \
+  --output resume.html
+```
+
+With `resumed` 6.x, a direct local file URL also works without installing the
+theme into the consuming project:
+
+```sh
+npx resumed render resume.json \
+  --theme file:///absolute/path/to/jsonresume-theme-colophon/index.js \
+  --output resume.html
+```
+
+`resumed` 6.x resolves theme names with JavaScript dynamic imports, so a
+relative directory passed directly to `--theme` is not resolved from the
+current working directory. Installing the local path and using the package
+name is the most portable local workflow.
+
+The package exports the JSON Resume theme interface:
+
+```js
+const { render } = require("jsonresume-theme-colophon");
+const html = render(resume);
+```
+
+## PDF export
+
+To export a PDF with `resumed`, install Puppeteer in the same project:
+
+```sh
+npm install resumed puppeteer jsonresume-theme-colophon
+npx resumed export resume.json \
+  --theme jsonresume-theme-colophon \
+  --output resume.pdf
+```
+
+You can also render HTML first and print it with Playwright, Puppeteer, or a
+browser. The theme includes print styles for white paper, quiet section breaks,
+sensible page margins, and reduced page breaks inside entries. The layout is
+designed to work on both A4 and Letter paper.
+
+## Supported sections
+
+Colophon renders these JSON Resume sections when they contain data:
+
+- `basics`, including `basics.profiles`
+- `work`
+- `projects`
+- `volunteer`
+- `education`
+- `skills`
+- `publications`
+- `certificates`
+- `awards`
+- `languages`
+- `interests`
+- `references`
+
+URLs are supported on contact details, profiles, organizations, projects,
+publications, certificates, awards, and education institutions. Date values in
+`YYYY-MM` or `YYYY-MM-DD` form are displayed as `Mon YYYY`; an omitted end date
+is displayed as `Present`.
+
+All rendered text is HTML-escaped, and unsafe URL protocols are discarded.
+Summaries and highlights are rendered as plain text, not Markdown. Blank lines
+in summaries create paragraphs, and single line breaks are preserved.
+
+## Development
+
+The implementation is deliberately small:
+
+- `index.js` contains the renderer and data-formatting helpers.
+- `style.css` contains screen and print styles embedded into the result.
+- `example/resume.json` exercises the supported section types.
+- `scripts/build-example.js` renders the local example.
+- `test/render.test.js` covers the theme interface, sparse data, and escaping.
+
+Run the checks:
+
+```sh
+npm test
+npm run build:example
+```
+
+## Publish to npm
+
+Update the version before the first release, then:
+
+```sh
+npm test
+npm run build:example
+npm pack --dry-run
+npm login
+npm publish --access public
+```
+
+## License
+
+[MIT](LICENSE)

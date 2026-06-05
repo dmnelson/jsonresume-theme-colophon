@@ -1,0 +1,310 @@
+{
+  "basics": {
+    "name": "Richard Hendricks",
+    "label": "Software engineer and compression enthusiast",
+    "image": "",
+    "email": "richard@piedpiper.example",
+    "phone": "",
+    "url": "https://piedpiper.example",
+    "summary": "Software engineer and founder focused on compression, distributed systems, and building products out of improbable technical breakthroughs. Most comfortable close to the code, but experienced in the strange overlap between engineering, product direction, fundraising, and keeping a startup alive long enough for the architecture to matter.",
+    "location": {
+      "address": "",
+      "postalCode": "94301",
+      "city": "Palo Alto",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "richardhendricks",
+        "url": "https://github.example/richardhendricks"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "richard-hendricks",
+        "url": "https://linkedin.example/in/richard-hendricks"
+      },
+      {
+        "network": "Website",
+        "username": "piedpiper.example",
+        "url": "https://piedpiper.example"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Pied Piper",
+      "position": "Founder & CEO",
+      "url": "https://piedpiper.example",
+      "startDate": "2014-04",
+      "endDate": "2019-12",
+      "summary": "Founded a software company built around a novel compression algorithm and later expanded the product direction into decentralized storage, media processing, and developer infrastructure.",
+      "highlights": [
+        "Designed and implemented the original compression engine that became the technical foundation of the company.",
+        "Led early product decisions across compression, distributed storage, and developer-facing tooling.",
+        "Built and managed a small engineering team through multiple product pivots, infrastructure rewrites, funding cycles, and launch constraints.",
+        "Worked across backend services, systems architecture, performance optimization, and product prototyping.",
+        "Represented the company in investor meetings, technical demos, launch events, and customer conversations while continuing to contribute to core engineering work."
+      ]
+    },
+    {
+      "name": "Hooli",
+      "position": "Software Engineer",
+      "url": "https://hooli.example",
+      "startDate": "2013-06",
+      "endDate": "2014-03",
+      "summary": "Worked on large-scale software systems inside a major technology company while developing independent research into compression algorithms.",
+      "highlights": [
+        "Contributed to internal engineering tools and platform services used by large product teams.",
+        "Gained experience working in a highly scaled engineering organization with formal review, deployment, and operational processes.",
+        "Developed experimental compression work outside core product responsibilities, eventually leading to the first Pied Piper prototype.",
+        "Learned several lessons about what not to optimize for when building software, teams, and companies."
+      ]
+    },
+    {
+      "name": "Aviato Incubator",
+      "position": "Resident Engineer & Founder-in-Progress",
+      "url": "https://aviato.example",
+      "startDate": "2014-01",
+      "endDate": "2014-04",
+      "summary": "Built early versions of Pied Piper from a startup incubator environment alongside other founders, engineers, and product experiments.",
+      "highlights": [
+        "Turned a prototype compression algorithm into a demonstrable product concept.",
+        "Prepared technical demos, early architecture plans, and investor-facing materials.",
+        "Collaborated with other founders and advisors on market positioning, product direction, and company formation.",
+        "Discovered that the hardest part of a startup is not always the algorithm."
+      ]
+    },
+    {
+      "name": "Independent Projects",
+      "position": "Developer",
+      "url": "https://richardhendricks.example",
+      "startDate": "2011-09",
+      "endDate": "2013-05",
+      "summary": "Built small tools, prototypes, and experiments around media processing, peer-to-peer systems, and data compression.",
+      "highlights": [
+        "Implemented early compression experiments in C, Python, and JavaScript.",
+        "Built prototypes for music analysis, file deduplication, and lightweight media indexing.",
+        "Explored tradeoffs between compression ratio, latency, CPU usage, and operational complexity.",
+        "Maintained a habit of overthinking technical elegance before eventually learning when to ship."
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Bay Area Code Mentors",
+      "position": "Volunteer Mentor",
+      "url": "https://code-mentors.example",
+      "startDate": "2018-02",
+      "endDate": "2019-08",
+      "summary": "Mentored early-career engineers and students interested in algorithms, backend systems, and startup engineering.",
+      "highlights": [
+        "Helped students reason through algorithm design, debugging, and software architecture tradeoffs.",
+        "Reviewed small open-source projects and provided feedback on code clarity, tests, and maintainability."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Stanford University",
+      "url": "https://stanford.example",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2007-09",
+      "endDate": "2011-06",
+      "score": "",
+      "courses": [
+        "Algorithms",
+        "Operating Systems",
+        "Distributed Systems",
+        "Information Theory",
+        "Machine Learning",
+        "Database Systems"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Startup Battlefield Winner",
+      "date": "2014-09",
+      "awarder": "Example Startup Conference",
+      "summary": "Recognized for a live technical demo of a compression platform built around the original Pied Piper algorithm."
+    },
+    {
+      "title": "Emerging Founder Fellowship",
+      "date": "2015-03",
+      "awarder": "Raviga Fellowship Program",
+      "summary": "Selected for early-stage technical leadership and product potential in infrastructure software."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Distributed Systems Design Intensive",
+      "date": "2016-05",
+      "issuer": "Systems Lab Example",
+      "url": "https://systems-lab.example/certificates/rhendricks"
+    },
+    {
+      "name": "Applied Cryptography for Engineers",
+      "date": "2017-11",
+      "issuer": "Open Security Institute",
+      "url": "https://security.example/certificates/rhendricks"
+    }
+  ],
+  "publications": [
+    {
+      "name": "A Practical Approach to Lossless Compression for Media-Rich Applications",
+      "publisher": "Journal of Fictional Computer Systems",
+      "releaseDate": "2015-10",
+      "url": "https://papers.example/richard-hendricks-lossless-compression",
+      "summary": "Outlined implementation tradeoffs in building a high-ratio compression system suitable for interactive media workflows."
+    },
+    {
+      "name": "Compression, Latency, and Developer Experience in Distributed File Systems",
+      "publisher": "Proceedings of the Example Systems Workshop",
+      "releaseDate": "2017-04",
+      "url": "https://papers.example/compression-latency-developer-experience",
+      "summary": "Explored the relationship between compression performance, operational complexity, and developer-facing infrastructure design."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Systems & Infrastructure",
+      "level": "Advanced",
+      "keywords": [
+        "Compression",
+        "Distributed systems",
+        "Storage engines",
+        "Performance optimization",
+        "Protocol design",
+        "Backend architecture"
+      ]
+    },
+    {
+      "name": "Programming",
+      "level": "Advanced",
+      "keywords": ["C", "Python", "JavaScript", "Go", "Rust", "SQL"]
+    },
+    {
+      "name": "Product Engineering",
+      "level": "Advanced",
+      "keywords": [
+        "Technical prototyping",
+        "Developer tools",
+        "Product discovery",
+        "Architecture decisions",
+        "Launch planning"
+      ]
+    },
+    {
+      "name": "Leadership",
+      "level": "Intermediate",
+      "keywords": [
+        "Founder leadership",
+        "Engineering management",
+        "Hiring",
+        "Mentoring",
+        "Investor communication",
+        "Technical demos"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Java",
+      "fluency": "Reads stack traces under pressure"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Compression",
+      "keywords": [
+        "Information theory",
+        "Entropy coding",
+        "Media processing",
+        "Benchmarks"
+      ]
+    },
+    {
+      "name": "Startup survival",
+      "keywords": [
+        "Product pivots",
+        "Technical demos",
+        "Board meetings",
+        "Incident recovery"
+      ]
+    },
+    {
+      "name": "Away from work",
+      "keywords": [
+        "Synthesizers",
+        "Old laptops",
+        "Antenna placement",
+        "Quiet debugging sessions"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Pied Piper Compression Engine",
+      "description": "A lossless compression engine designed for high-ratio media and file processing workloads.",
+      "highlights": [
+        "Implemented core compression pipeline and benchmarking suite.",
+        "Optimized for compression ratio, latency, and memory usage across large file sets.",
+        "Built demos and developer tooling to explain performance tradeoffs."
+      ],
+      "keywords": ["Compression", "C", "Benchmarking", "Performance"],
+      "startDate": "2014-01",
+      "endDate": "2016-08",
+      "url": "https://piedpiper.example/compression"
+    },
+    {
+      "name": "Pied Piper Distributed Storage",
+      "description": "A prototype decentralized storage platform using compression-aware chunking and replication.",
+      "highlights": [
+        "Designed early architecture for file chunking, replication, and retrieval.",
+        "Explored trust, availability, and performance tradeoffs in peer-to-peer storage.",
+        "Built internal tools for observing storage behavior across simulated network conditions."
+      ],
+      "keywords": [
+        "Distributed systems",
+        "Storage",
+        "Peer-to-peer",
+        "Compression"
+      ],
+      "startDate": "2016-09",
+      "endDate": "2018-12",
+      "url": "https://piedpiper.example/storage"
+    },
+    {
+      "name": "Middle-Out Benchmark Suite",
+      "description": "A fictional benchmark suite for comparing compression techniques under awkwardly specific constraints.",
+      "highlights": [
+        "Measured compression ratio, latency, CPU usage, and memory consumption.",
+        "Generated reproducible reports for algorithm comparisons.",
+        "Made technical demos slightly less chaotic."
+      ],
+      "keywords": ["Benchmarking", "Compression", "Developer tools"],
+      "startDate": "2015-02",
+      "endDate": "2015-12",
+      "url": "https://piedpiper.example/benchmarks"
+    }
+  ],
+  "references": [
+    {
+      "name": "References",
+      "reference": "Available upon request, preferably after the demo works."
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/dmnelson/jsonresume-theme-colophon/main/example/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2026-06-05",
+    "note": "This is fictional sample data for demonstrating a JSON Resume theme. It is inspired by a pop-culture software founder and is not intended to represent a real person."
+  }
+}

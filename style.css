@@ -1,0 +1,642 @@
+:root {
+  color-scheme: light;
+  --background: #f3f0e8;
+  --paper: #f7f4ed;
+  --text: #242321;
+  --text-soft: #4d4943;
+  --muted: #6b675f;
+  --accent: #a8442d;
+  --accent-hover: #98591d;
+  --focus: #98591d;
+  --rule: #d8d2c7;
+  --content-width: 53rem;
+  --font-body: "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  --font-serif: Baskerville, "Iowan Old Style", "Palatino Linotype", Palatino,
+    Georgia, serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono",
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-kerning: normal;
+  line-height: 1.66;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 42%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  border-radius: 2px;
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #ead5aa;
+  color: var(--text);
+}
+
+.skip-link {
+  background: var(--text);
+  color: var(--background);
+  font-size: 0.78rem;
+  left: 1rem;
+  padding: 0.45rem 0.7rem;
+  position: fixed;
+  top: 1rem;
+  transform: translateY(-200%);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.page {
+  margin: 0 auto;
+  max-width: var(--content-width);
+  padding: 4.45rem 1.4rem 5.2rem;
+  width: 100%;
+}
+
+.resume-header {
+  margin-bottom: 3.65rem;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+dl,
+blockquote {
+  margin-top: 0;
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3.15rem, 9vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.role {
+  color: var(--text-soft);
+  font-size: 1.06rem;
+  margin-bottom: 0.45rem;
+}
+
+.contact-list {
+  align-items: baseline;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  gap: 0.15rem 0;
+  line-height: 1.6;
+  list-style: none;
+  margin-bottom: 1.75rem;
+  padding: 0;
+}
+
+.contact-list li + li::before,
+.entry-meta span + span::before {
+  color: var(--rule);
+  content: "/";
+  display: inline-block;
+  margin: 0 0.58rem;
+}
+
+.contact-list li {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.contact-list a {
+  overflow-wrap: anywhere;
+}
+
+.introduction {
+  color: #35322e;
+  font-size: 1.06rem;
+  line-height: 1.72;
+}
+
+.prose p,
+.introduction p {
+  margin-bottom: 0.75rem;
+}
+
+.prose p:last-child,
+.introduction p:last-child {
+  margin-bottom: 0;
+}
+
+.resume-section {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  margin-top: 3.05rem;
+}
+
+h2 {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin: 0;
+  padding-top: 0.4rem;
+}
+
+.section-content {
+  min-width: 0;
+}
+
+.entry {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.entry + .entry {
+  margin-top: 2.12rem;
+}
+
+.entry-header {
+  margin-bottom: 0.58rem;
+}
+
+h3,
+.detail-item dt {
+  color: var(--text);
+  font-size: 1.03rem;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  line-height: 1.36;
+  margin-bottom: 0.16rem;
+}
+
+h3 a {
+  font-weight: inherit;
+}
+
+.entry-meta {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+.entry-meta span {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.prose {
+  color: var(--text-soft);
+  font-size: 0.94rem;
+  line-height: 1.64;
+}
+
+.highlights {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.58;
+  margin: 0.76rem 0 0;
+  padding-left: 1.12rem;
+}
+
+.highlights li {
+  padding-left: 0.16rem;
+}
+
+.highlights li + li {
+  margin-top: 0.32rem;
+}
+
+.highlights li::marker {
+  color: var(--muted);
+}
+
+.detail-line {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin: 0.72rem 0 0;
+}
+
+.detail-label {
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  margin-right: 0.65rem;
+}
+
+.detail-list {
+  display: grid;
+  gap: 0.82rem;
+  margin-bottom: 0;
+}
+
+.detail-item {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: minmax(7rem, 0.42fr) minmax(0, 1fr);
+}
+
+.detail-item dt,
+.detail-item dd {
+  margin: 0;
+}
+
+.detail-item dd {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  line-height: 1.52;
+  padding-top: 0.05rem;
+}
+
+.detail-item .quiet {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  margin-left: 0.35rem;
+  white-space: nowrap;
+}
+
+.resume-section-skills .detail-list {
+  gap: 0.95rem;
+  max-width: 39rem;
+}
+
+.resume-section-skills .detail-item {
+  display: block;
+}
+
+.resume-section-skills .detail-item dt {
+  margin-bottom: 0.14rem;
+}
+
+.resume-section-skills .detail-item dd {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.resume-section-languages,
+.resume-section-interests,
+.resume-section-references {
+  margin-top: 2.45rem;
+}
+
+.resume-section-languages .detail-list,
+.resume-section-interests .detail-list {
+  gap: 0.58rem;
+}
+
+.resume-section-references .entry + .entry {
+  margin-top: 1.4rem;
+}
+
+.reference blockquote {
+  color: var(--text-soft);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.58;
+  margin: 0;
+}
+
+@media (max-width: 40rem) {
+  .page {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    padding: 2.7rem 1.1rem 3.5rem;
+  }
+
+  .resume-header {
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .resume-section {
+    display: block;
+    margin-top: 2.65rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    padding-top: 0;
+  }
+
+  .contact-list,
+  .entry-meta {
+    display: block;
+  }
+
+  .contact-list li,
+  .entry-meta span {
+    display: inline;
+  }
+
+  .entry + .entry {
+    margin-top: 1.75rem;
+  }
+
+  .detail-item {
+    display: block;
+  }
+
+  .detail-item dt {
+    margin-bottom: 0.05rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+@page {
+  margin: 10mm 12mm 11mm;
+  size: auto;
+}
+
+@media print {
+  :root {
+    --background: #ffffff;
+    --text: #161616;
+    --text-soft: #303030;
+    --muted: #575757;
+    --accent: #722f21;
+    --rule: #bdbdbd;
+  }
+
+  html {
+    background: #ffffff;
+    font-size: 10pt;
+    line-height: 1.52;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .skip-link {
+    display: none;
+  }
+
+  .page {
+    margin: 0;
+    max-width: none;
+    padding: 0;
+  }
+
+  .resume-header {
+    margin-bottom: 18pt;
+  }
+
+  h1 {
+    font-size: 28pt;
+    letter-spacing: -0.02em;
+    margin-bottom: 6pt;
+  }
+
+  .role {
+    font-size: 9.4pt;
+    margin-bottom: 2pt;
+  }
+
+  .contact-list {
+    font-size: 6.9pt;
+    line-height: 1.52;
+    margin-bottom: 8.5pt;
+  }
+
+  .introduction {
+    font-size: 9.15pt;
+    line-height: 1.56;
+    max-width: none;
+  }
+
+  .resume-section {
+    display: block;
+    margin-top: 14.5pt;
+    padding-left: 0;
+    position: static;
+  }
+
+  .resume-section:not(.resume-section-work) {
+    border-top: 0.5pt solid rgba(120, 112, 100, 0.18);
+    padding-top: 5.8pt;
+  }
+
+  .resume-header + .resume-section {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  h2 {
+    color: #4b4741;
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 4.5pt;
+    padding-top: 0;
+    position: static;
+    width: auto;
+  }
+
+  h3,
+  .detail-item dt {
+    font-size: 9.65pt;
+    font-weight: 650;
+    letter-spacing: -0.004em;
+  }
+
+  .entry + .entry {
+    margin-top: 12pt;
+  }
+
+  .entry-header {
+    margin-bottom: 4pt;
+  }
+
+  .entry-meta {
+    color: #67625b;
+    font-size: 6.35pt;
+    line-height: 1.45;
+  }
+
+  .prose {
+    font-size: 8.75pt;
+    line-height: 1.52;
+  }
+
+  .prose p,
+  .introduction p {
+    margin-bottom: 4.2pt;
+  }
+
+  .highlights {
+    font-size: 8.5pt;
+    line-height: 1.46;
+    margin-top: 5pt;
+    padding-left: 11.5pt;
+  }
+
+  .highlights li {
+    padding-left: 1.2pt;
+  }
+
+  .highlights li + li {
+    margin-top: 2.8pt;
+  }
+
+  .detail-line,
+  .detail-item dd {
+    font-size: 8.4pt;
+    line-height: 1.48;
+  }
+
+  .detail-label,
+  .detail-item .quiet {
+    color: #67625b;
+    font-size: 6.15pt;
+  }
+
+  .detail-list {
+    display: block;
+    gap: 0;
+  }
+
+  .detail-item {
+    display: block;
+  }
+
+  .detail-item + .detail-item {
+    margin-top: 6.2pt;
+  }
+
+  .resume-section-skills .detail-list {
+    gap: 5.2pt;
+  }
+
+  .resume-section-skills .detail-item + .detail-item {
+    margin-top: 5.8pt;
+  }
+
+  .resume-section-skills .detail-item dd {
+    font-size: 8.45pt;
+    line-height: 1.48;
+  }
+
+  .resume-section-languages,
+  .resume-section-interests,
+  .resume-section-references {
+    display: block;
+    margin-top: 7.5pt;
+  }
+
+  .resume-section-languages .detail-list,
+  .resume-section-interests .detail-list {
+    gap: 4pt;
+  }
+
+  .resume-section-languages .detail-item + .detail-item,
+  .resume-section-interests .detail-item + .detail-item {
+    margin-top: 4.8pt;
+  }
+
+  .resume-section-languages h2,
+  .resume-section-interests h2,
+  .resume-section-references h2 {
+    margin-bottom: 4pt;
+    padding-top: 0;
+  }
+
+  .reference blockquote {
+    font-size: 8.4pt;
+    line-height: 1.5;
+  }
+
+  a {
+    color: var(--text);
+    text-decoration-color: #8f8a82;
+    text-decoration-thickness: 0.35pt;
+    text-underline-offset: 0.16em;
+  }
+
+  .resume-section-education,
+  .resume-section-skills,
+  .resume-section-publications {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h3,
+  .entry-header {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume-section-work .entry {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .detail-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
