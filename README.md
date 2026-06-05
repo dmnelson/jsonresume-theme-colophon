@@ -18,8 +18,6 @@ so it does not need filesystem access at render time.
 
 ## Install
 
-Once published:
-
 ```sh
 npm install resumed jsonresume-theme-colophon
 ```
@@ -143,16 +141,18 @@ npm run build:example
 npm pack --dry-run
 ```
 
-## Publish to npm
+## Release
 
-Update the version before the first release, then:
+For maintainers, update the version and changelog, then:
 
 ```sh
 npm test
 npm run build:example
 npm pack --dry-run
 npm login
-npm publish --access public
+npm publish
+git tag vX.Y.Z
+git push origin vX.Y.Z
 ```
 
 ## License
