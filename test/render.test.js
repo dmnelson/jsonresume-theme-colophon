@@ -41,6 +41,20 @@ test("exports a render function and returns a complete HTML document", () => {
   assert.doesNotMatch(html, />Advanced</);
 });
 
+test("uses the resume language metadata with a safe fallback", () => {
+  assert.match(
+    theme.render({ basics: { name: "Welsh Example" }, meta: { language: "cy-GB" } }),
+    /<html lang="cy-GB">/,
+  );
+  assert.match(
+    theme.render({
+      basics: { name: "Unsafe Language Example" },
+      meta: { language: 'en"><script>alert(1)</script>' },
+    }),
+    /<html lang="en">/,
+  );
+});
+
 test("published entrypoint has inlined styles and no runtime filesystem dependency", () => {
   const source = fs.readFileSync(path.join(__dirname, "..", "dist", "index.js"), "utf8");
 

@@ -147,6 +147,12 @@ function formatLocation(location) {
     .join(", ");
 }
 
+function languageTag(value) {
+  const language = text(value);
+
+  return /^[a-z]{2,3}(?:-[a-z0-9]{2,8})*$/i.test(language) ? language : "en";
+}
+
 function prose(value, className = "prose") {
   const content = text(value);
 
@@ -422,7 +428,9 @@ function renderReferences(value) {
 function render(resume = {}) {
   const data = resume && typeof resume === "object" ? resume : {};
   const basics = data.basics && typeof data.basics === "object" ? data.basics : {};
+  const meta = data.meta && typeof data.meta === "object" ? data.meta : {};
   const name = text(basics.name) || "Resume";
+  const language = languageTag(meta.language);
   const sections = joinHtml([
     renderWork(data.work),
     renderProjects(data.projects),
@@ -450,7 +458,7 @@ function render(resume = {}) {
   ]);
 
   return `<!doctype html>
-<html lang="en">
+<html lang="${escapeHtml(language)}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

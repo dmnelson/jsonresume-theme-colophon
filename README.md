@@ -1,5 +1,11 @@
 # jsonresume-theme-colophon
 
+[![npm version](https://img.shields.io/npm/v/jsonresume-theme-colophon.svg)](https://www.npmjs.com/package/jsonresume-theme-colophon)
+[![npm downloads](https://img.shields.io/npm/dm/jsonresume-theme-colophon.svg)](https://www.npmjs.com/package/jsonresume-theme-colophon)
+[![CI](https://github.com/dmnelson/jsonresume-theme-colophon/actions/workflows/ci.yml/badge.svg)](https://github.com/dmnelson/jsonresume-theme-colophon/actions/workflows/ci.yml)
+[![Node.js](https://img.shields.io/node/v/jsonresume-theme-colophon.svg)](https://www.npmjs.com/package/jsonresume-theme-colophon)
+[![License: MIT](https://img.shields.io/npm/l/jsonresume-theme-colophon.svg)](LICENSE)
+
 A warm, text-first JSON Resume theme for self-contained HTML resumes and polished PDFs.
 
 Colophon is built for resumes that read like considered documents rather than
@@ -7,38 +13,29 @@ dashboards, templates, or landing pages. It pairs a large serif name with quiet
 monospace section labels, muted metadata, clay-colored links, and a
 single-column rhythm that stays readable on screen and in print.
 
-The renderer is plain CommonJS, has no runtime dependencies, and returns a
-complete, self-contained HTML document. It does not use client-side rendering
-or external fonts. The published entrypoint has its CSS inlined at build time,
-so it does not need filesystem access at render time.
+## Features
+
+- Complete, self-contained HTML output with inlined CSS
+- No runtime dependencies, client-side JavaScript, or external fonts
+- Semantic, source-ordered HTML with ATS-oriented regression checks
+- Responsive screen layout and single-column print styles
+- Defensive HTML escaping and safe URL handling
+- CommonJS package with TypeScript declarations
+- Support for all standard JSON Resume sections
 
 ## Screenshot
 
 ![Colophon example resume](https://raw.githubusercontent.com/dmnelson/jsonresume-theme-colophon/main/docs/screenshot.png)
 
-## Install
+## Installation
 
 ```sh
 npm install resumed jsonresume-theme-colophon
 ```
 
-For local development:
+Node.js 18 or later is required.
 
-```sh
-git clone https://github.com/dmnelson/jsonresume-theme-colophon.git
-cd jsonresume-theme-colophon
-npm install
-npm run build
-npm test
-npm run build:example
-```
-
-The generated example is written to `example/resume.html`. It is ignored by
-Git so local render checks do not create repository noise.
-
-## Use with resumed
-
-Render with the published package:
+## CLI usage
 
 ```sh
 npx resumed render resume.json \
@@ -46,7 +43,9 @@ npx resumed render resume.json \
   --output resume.html
 ```
 
-Render directly from a local checkout:
+### Local theme development
+
+Install a local checkout into the project containing your resume:
 
 ```sh
 npm install resumed ./path/to/jsonresume-theme-colophon
@@ -70,12 +69,18 @@ relative directory passed directly to `--theme` is not resolved from the
 current working directory. Installing the local path and using the package
 name is the most portable local workflow.
 
-The package exports the JSON Resume theme interface:
+## Programmatic API
+
+The package exports a single `render` function:
 
 ```js
 const { render } = require("jsonresume-theme-colophon");
 const html = render(resume);
 ```
+
+### `render(resume)`
+
+Accepts a JSON Resume object and returns a complete HTML document as a string.
 
 ## PDF export
 
@@ -119,7 +124,44 @@ All rendered text is HTML-escaped, and unsafe URL protocols are discarded.
 Summaries and highlights are rendered as plain text, not Markdown. Blank lines
 in summaries create paragraphs, and single line breaks are preserved.
 
+Set `meta.language` to a BCP 47 language tag such as `en`, `en-GB`, or `cy-GB`
+to use it as the document language. Invalid or omitted values fall back to
+`en`.
+
+## ATS considerations
+
+The theme keeps resume content in semantic, source-ordered HTML and switches to
+a single-column layout for print. It does not use tables, images, scripts,
+external fonts, or client-side rendering.
+
+`npm test` includes ATS-oriented regression checks for semantic structure,
+heading hierarchy, representative text extraction, descriptive links, local
+font fallbacks, minimum screen text sizes, and print layout. Run only those
+checks with:
+
+```sh
+npm run test:ats
+```
+
+These checks protect theme structure; they cannot guarantee behavior in every
+applicant tracking system or measure how well a particular resume matches a
+job description.
+
 ## Development
+
+Clone the repository and run the checks:
+
+```sh
+git clone https://github.com/dmnelson/jsonresume-theme-colophon.git
+cd jsonresume-theme-colophon
+npm install
+npm test
+npm run build:example
+npm pack --dry-run
+```
+
+The generated example is written to `example/resume.html`. It is ignored by
+Git so local render checks do not create repository noise.
 
 The implementation is deliberately small:
 
@@ -131,15 +173,8 @@ The implementation is deliberately small:
 - `scripts/build-example.js` renders the local example.
 - `test/render.test.js` covers the theme interface, sparse data, escaping, and
   the generated entrypoint.
-
-Run the checks:
-
-```sh
-npm run build
-npm test
-npm run build:example
-npm pack --dry-run
-```
+- `test/ats.test.js` covers ATS-oriented HTML, content, typography, and print
+  invariants.
 
 ## Release
 
